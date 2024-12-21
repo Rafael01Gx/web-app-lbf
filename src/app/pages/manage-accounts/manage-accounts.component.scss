@@ -1,0 +1,31 @@
+:host {
+  .tabela {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    table {
+        width: 100%;
+      }
+      
+      .mat-mdc-form-field {
+        font-size: 14px;
+        width: 100%;
+        
+      }
+      
+      td, th {
+        width: 25%;      
+      }
+
+      td:hover{
+        cursor: pointer;
+      }
+      th  {
+       background: var(--gray-100);
+      }
+      .t-center{
+        text-align: center;
+       
+  }
+}}

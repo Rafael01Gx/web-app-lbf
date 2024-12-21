@@ -1,0 +1,53 @@
+<mat-card>
+    <div
+      class="close-bar"
+      [ngClass]="{
+        'bg-red-10': prazo_atual.includes('atraso'),
+        'bg-blue-10': prazo_atual.includes('restantes')
+      }"
+    >
+      <span> {{ prazo_atual }}</span>
+      <mat-icon (click)="closeDialog()">close</mat-icon>
+    </div>
+    <mat-card-header>
+      <h2>{{ensaio}}</h2>
+    </mat-card-header>
+  
+    <mat-card-content>
+         <div class="form-controls">
+            <mat-form-field>
+              <mat-label>Configuração</mat-label>
+              <mat-select #select (selectionChange)="selecionarConfiguracao($event.value)" >
+                @for (item of listConfigAnalises; track item) {
+                <mat-option [value]="item._id"
+                  >{{ item.materia_prima.nome_descricao }}</mat-option             >
+                }
+  
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </mat-card-content>
+        <mat-card appearance="raised">
+          <mat-card-content class="table-content">
+            <table>
+
+                @for(config of getParamsValues(configuracaoSelecionada()); track config) {
+                <tr >
+                  <td> 
+                    <mat-form-field >
+                      <span matTextPrefix>{{config.item}} &nbsp; - </span>
+                      <span matTextSuffix>&nbsp; {{config.unidade_resultado}}</span>
+                      <input (wheel)="$event.preventDefault()" required #data type="number" [(ngModel)]="config.valor_resultado"  autocomplete="off"  matInput (blur)="limitarCasasDecimais($event, config.casas_decimais)">
+                    </mat-form-field>
+                </tr>
+              }
+
+              </table>
+            </mat-card-content>
+          </mat-card>
+          
+          
+          <button mat-raised-button (click)="saveData()">Salvar</button>
+        </mat-card>
+  

@@ -1,0 +1,30 @@
+<app-header [pageIco]="pageIco" [pageTitle]="pageTitle"></app-header>
+<main>
+    <div class="sidenav-container">
+        <app-sidenav></app-sidenav>
+    </div>
+    <div class="main-container">
+        <app-main>
+            <mat-card>
+                <mat-card-header>
+    
+                @for(link of linkAnalises ; track link ) {
+                    <div [routerLink]="[link.link]" routerLinkActive="active" class="navegacao" >
+                          {{link.name}} <mat-icon>{{link.ico}}</mat-icon>
+                    </div >
+                } 
+               </mat-card-header>               
+          
+            <mat-card-content >
+
+                
+                <router-outlet></router-outlet>
+
+            
+            </mat-card-content>
+        </mat-card>
+      
+        </app-main> 
+    </div>
+  
+</main>

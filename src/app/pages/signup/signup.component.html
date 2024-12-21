@@ -1,0 +1,56 @@
+<app-login-layout title="Sigin" primaryBtnText="Solicitar" secondaryBtnText="Entrar" (submit)="submit()" (navigate)="navigate()" [disablePrimaryBtn]="!signupForm.valid">
+
+    
+    <form [formGroup]="signupForm">
+        <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput formControlName="name" placeholder="Digite seu nome Ex. Ana">
+            @if (signupForm.get('name')?.errors) {
+                <mat-error>O nome é obrigatório!</mat-error>
+              }
+          </mat-form-field> 
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. ana@exemplo.com">
+            @if (!signupForm.get('email')?.errors) {
+                <mat-error>E-mail inválido!</mat-error>
+              }
+          </mat-form-field>  
+          
+          <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input #pass type="password" matInput formControlName="password" placeholder="********">
+            @if (!signupForm.get('password')?.value) {
+                <mat-error>A senha é obrigatória!</mat-error>
+
+              }
+            </mat-form-field> 
+            <div class="verificacao" *ngIf="signupForm.get('password')?.value"> 
+             <div class="item"> 
+              <div [ngClass]="{'pass': hasUpperCase(pass.value),'dontpass': !hasUpperCase(pass.value)}"></div>
+             <span>Maiúsculas</span>
+            </div>
+              <div class="item">
+                <div [ngClass]="{'pass': hasLower(pass.value),'dontpass': !hasLower(pass.value)}"></div>
+              <span>Minúsculas</span>
+              </div>
+             <div class="item">
+              <div [ngClass]="{'pass': hasNumber(pass.value),'dontpass': !hasNumber(pass.value)}"></div>
+              <span>Números</span>
+            </div>
+             <div class="item">
+              <div [ngClass]="{'pass': (pass.value.length>5),'dontpass': (pass.value.length <= 5)}"></div>
+              <span>> 6 Caracteres</span>
+            </div>
+             </div>
+
+          <mat-form-field>
+            <mat-label>Confirme a senha</mat-label>
+            <input type="password" matInput formControlName="confirmpassword" placeholder="********">
+            @if (signupForm.get('confirmpassword')?.value != signupForm.get('password')?.value) {
+                <mat-error>As senhas não conferem!</mat-error>
+              }
+          </mat-form-field> 
+    </form>
+
+</app-login-layout>

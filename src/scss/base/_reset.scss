@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+h2,h3,h4,h5,h6 {
+  font-weight: 500 !important;
+}
+
+main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 5px;
+
+
+  .main-container{
+    flex-grow: 1;
+    margin-top: 3px;
+    padding: 15px;
+  }
+
+  @media (max-width: 600px) {
+    width: 100lvw;
+    flex-direction: column;
+  }
+  
+}
+.m-hover:hover{
+  cursor: pointer;
+ }
+
+.w-100 {
+  width: 100%;
+}
+.h-100{
+  height: 90%;
+}
+a {
+  text-decoration: none;
+}
+
+.red-10{
+  color: var(--red-10);
+}
+.bg-red-10{
+  background-color: var(--red-10);
+}
+.bg-blue-10{
+  background: var(--blue-10);
+}
+.red{
+  color: red;
+}
+.green{
+  color: green;
+}
+.blue{
+  color:  #005cbb;
+}
+
+.cancelar{
+  background-color: var(--red-10) !important;
+  color: var(--gray-100) !important;
+}
+.editar{
+  color: #005cbb !important ;
+}
+.d-flex{
+  display: flex !important;
+}
+

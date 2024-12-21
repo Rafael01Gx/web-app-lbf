@@ -1,0 +1,33 @@
+<app-header [pageIco]="pageIco" [pageTitle]="pageTitle"></app-header>
+<main>
+    <div class="sidenav-container">
+        <app-sidenav></app-sidenav>
+    </div>
+    <div class="main-container">
+        <app-main>
+        <!-- ngContent   <app-configuracao-analise/>   -->
+
+        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z3 w-100 h-100">
+            <mat-tab label="Configuração de Análise" > 
+                <app-configuracao-analise-lista/>
+            </mat-tab>
+            <!--Tab 2-->
+            <mat-tab label="Parâmetros">            
+                         <app-parametros/>
+            </mat-tab>
+            <!--Tab 3-->
+            <mat-tab label="Matéria-prima">
+                <app-materia-prima/>
+            </mat-tab>
+            <!--Tab 4-->
+            <mat-tab label="Tipo de Análise">
+                <app-tipo-de-analise/>
+                
+            </mat-tab>
+          </mat-tab-group>
+
+        <!-- ngContent-->
+        </app-main> 
+    </div>
+  
+</main>

@@ -1,0 +1,80 @@
+<mat-card>
+
+  <div class="form-buttons">
+    <button mat-flat-button (click)="openDialogConfigAnalise('0ms','0ms')"><mat-icon>add</mat-icon> Nova configuração</button>
+  </div>
+
+
+  <div class="divisor">
+    <div></div>
+    <span> Configurações </span>
+    <div></div>
+  </div>
+
+
+ <div class="tabela-container">
+            
+        <mat-form-field class="w-100 filter-field">
+          <mat-label>Filtro</mat-label>
+          <input
+            matInput
+            (keyup)="applyFilter($event)"
+            placeholder=""
+            #input
+          />
+        </mat-form-field>
+    
+        <div class="mat-elevation-z8 table-wrapper">
+          <table mat-table [dataSource]="dataSource" matSort class="materia-prima-table">
+            <ng-container matColumnDef="item">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Num.Item</th>
+              <td  mat-cell *matCellDef="let row">{{ row.item }}</td>
+            </ng-container>
+     
+            <ng-container matColumnDef="materia_prima">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Materia-Prima</th>
+              <td  mat-cell *matCellDef="let row">{{ row.materia_prima.nome_descricao }}</td>
+            </ng-container>
+    
+          
+            <ng-container matColumnDef="tipo_de_analise">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Análise</th>
+              <td mat-cell *matCellDef="let row">{{ row.tipo_de_analise.tipo }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="editar" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Editar</th>
+              <td  mat-cell *matCellDef="let row"  ><i class="material-icons editar m-hover "(click)="openDialogEditAnalise('0ms','0ms',row)">edit</i></td>
+            </ng-container>
+            <ng-container matColumnDef="excluir" >
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Excluir</th>
+              <td  mat-cell *matCellDef="let row" ><i class="material-icons red-10 m-hover" (click)="openDialogDelet('0ms', '0ms',row)">delete_forever</i></td>
+            </ng-container>
+    
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+    
+    
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">
+                 {{ input.value }}
+              </td>
+            </tr>
+          </table>
+    
+          <mat-paginator
+            [pageSizeOptions]="[10,30,50]"
+            aria-label="Selecione"
+            class="sticky-paginator"
+          ></mat-paginator>
+        </div>
+          </div>
+
+          
+</mat-card>
+
+
+
+
+  

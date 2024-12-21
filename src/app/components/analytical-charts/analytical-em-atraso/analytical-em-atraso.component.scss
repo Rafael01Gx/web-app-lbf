@@ -1,0 +1,32 @@
+:host {
+  .title-1{
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  .title-2{
+    font-size: 1.5rem;
+  }
+  .container-1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .col-2{
+      flex-grow: 1;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      align-items:center ;
+      justify-content: center;
+    }
+    .text {
+margin-top: -25px;
+      display: flex;
+      flex-flow: column wrap;
+      text-align: center;
+    }
+    #chart {
+      margin: 0;
+    }
+  }
+}

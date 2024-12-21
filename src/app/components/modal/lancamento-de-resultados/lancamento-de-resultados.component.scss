@@ -1,0 +1,135 @@
+::ng-deep .mat-mdc-dialog-surface{
+  border-radius: 5px !important;
+  padding: 0 !important;
+   }
+   ::ng-deep .cdk-overlay-dark-backdrop {
+  background: black !important;
+  opacity: 0.6 !important;
+
+   }
+
+:host {
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  mat-card {
+    display: flex;
+    width: 100%;
+    height: 100%; 
+    flex-direction: column;
+    border-radius: 5px;
+    padding-bottom: 0;
+
+    .close-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      width: 100%;
+      height: 25px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      span {
+        color: white;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        align-self: center;
+      }
+
+      mat-icon {
+        margin-right: 5px;
+        color: white;
+        transition: color 0.1s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          color: red;
+        }
+      }
+    }
+
+    mat-card-header {
+      position: sticky;
+      top:25px;
+      z-index: 10;
+
+
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-700);
+      background: var(--ligth-white-gradient);
+      border-radius: 5px;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 0;
+      flex-grow: 1; /* Permite que o conteúdo ocupe o restante do espaço disponível */
+
+      .form-controls {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: baseline;
+        gap: 10px;
+
+        mat-form-field {
+          flex-grow: 1;
+        }
+      }
+
+      &.table-content {
+        table {
+          width: 100%;
+          margin: auto;
+          padding: 20px;
+
+          mat-form-field {
+            width: 100%;
+            margin: 5px;
+            height: 50px;
+
+            span {
+              color: var(--blue-10);
+            }
+
+            input {
+              text-align: center;
+            }
+          }
+
+          td {
+            align-items: baseline;
+          }
+        }
+      }
+    }
+
+    .border-gray {
+      border: 1px solid var(--gray-700);
+    }
+  }
+
+  button {
+    
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    border-radius: 5px;
+
+  }
+}

@@ -1,0 +1,130 @@
+<mat-card>
+  <div
+    class="close-bar"
+    [ngClass]="{
+      'bg-red-10': prazo_atual.includes('atraso'),
+      'bg-blue-10': prazo_atual.includes('restantes')
+    }"
+  >
+    <span> {{ prazo_atual }}</span>
+    <mat-icon (click)="closeDialog()">close</mat-icon>
+  </div>
+  <mat-card-header>
+    <img src="/img/logo_SFND - 200px.png" alt="Logotipo Laboratório Físico" />
+    <h2>Detalhes</h2>
+    <div class="os-number">
+      Ordem de Serviço <span> {{ data.numeroOs }} </span>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    @if(data){
+
+    <form [formGroup]="analiseForm">
+      <fieldset class="solicitante">
+        <legend>Solicitante</legend>
+        <mat-form-field style="width: 150px">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome_solicitante" readonly />
+        </mat-form-field>
+        <mat-form-field style="width: 150px">
+          <mat-label>Função</mat-label>
+          <input matInput formControlName="funcao" readonly />
+        </mat-form-field>
+        <mat-form-field style="width: 150px">
+          <mat-label>Área</mat-label>
+          <input matInput formControlName="area" readonly />
+        </mat-form-field>
+        <mat-form-field style="width: 300px">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email_solicitante" readonly />
+        </mat-form-field>
+        <mat-form-field style="width: 200px">
+          <mat-label>Contato</mat-label>
+          <input
+            matInput
+            formControlName="contato_solicitante"
+            mask="(00) 0 0000-0000"
+            readonly
+          />
+        </mat-form-field>
+      </fieldset>
+      <fieldset class="item">
+        <legend>Item</legend>
+
+        <mat-form-field>
+          <mat-label>Identificação</mat-label>
+          <input matInput formControlName="nome_amostra" readonly />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Data</mat-label>
+          <input matInput formControlName="data_amostra" readonly />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <input matInput formControlName="status_amostra" readonly />
+        </mat-form-field>
+
+        <fieldset class="item">
+          <legend>Análises</legend>
+          @for(item of analises ; track item){
+          <fieldset class="analises">
+            <legend>{{ item }}</legend>
+            @defer (on idle) { @if(resultados[item]){
+            <div style="flex-grow: 1; display: flex; gap: 2px">
+              @for (resultados of objectToArray(resultados[item]); track
+              resultados) {
+              <div class="table-results">
+                <div class="table-h">
+                 <span> {{ resultados.item }}</span>
+                </div>
+                <div>
+                  <span>{{ resultados.unidade_resultado }}</span>
+                </div>
+                <div>
+                  <span>{{
+                    resultados.valor_resultado
+                      | decimalFormat : resultados.casas_decimais
+                  }}</span>
+                </div>
+              </div>
+
+              }
+            </div>
+            } } @loading (minimum 1s) {
+            <img alt="loading..." src="loading.gif" />
+            }
+
+            <div class="btn-container">
+              <button (click)="openDialog(item)" mat-fab><mat-icon>{{ resultados[item] ? "edit" : "add" }}</mat-icon>
+              </button>
+              <button
+                class="cancelar"
+                (click)="removerResultado(item)"
+                mat-fab
+                [hidden]="!resultados[item]"
+              ><mat-icon>remove</mat-icon>
+              </button>
+            </div>
+          </fieldset>
+          }
+        </fieldset>
+      </fieldset>
+    </form>
+
+    }@else {
+
+    <p>Não existem dados para exibição</p>
+    }
+  </mat-card-content>
+  <div class="atualizar" *ngIf="exibirBtt"><button mat-raised-button (click)="salvarAlteracoes()"> Salvar alterações</button></div>
+  <div
+    class="fter"
+    [ngClass]="{
+      'bg-red-10': prazo_atual.includes('atraso'),
+      'bg-blue-10': prazo_atual.includes('restantes')
+    }"
+  ></div>
+</mat-card>

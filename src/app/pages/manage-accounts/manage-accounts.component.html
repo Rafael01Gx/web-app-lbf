@@ -1,0 +1,82 @@
+<app-header [pageIco]="pageIco" [pageTitle]="pageTitle"></app-header>
+<main>
+  <div class="sidenav-container">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="main-container">
+    <app-main>
+      <!-- ngContent-->
+        <div class="tabela">
+            
+      <mat-form-field>
+        <mat-label>Filtro</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder=""
+          #input
+        />
+      </mat-form-field>
+
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+ 
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+            <td (click)="openDialog(row)" mat-cell *matCellDef="let row">{{ row.name }}</td>
+          </ng-container>
+
+   
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>E-mail</th>
+            <td (click)="openDialog(row)" mat-cell *matCellDef="let row">{{ row.email }}</td>
+          </ng-container>
+
+        
+          <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Contato</th>
+            <td (click)="openDialog(row)" mat-cell *matCellDef="let row">{{ row.phone | mask: '(00) 0 0000-0000'}}</td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="authorization">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Autorização</th>
+            <td (click)="openDialog(row)" mat-cell *matCellDef="let row">@if(row.authorization){
+              <i class="material-icons green" >check</i>             
+              }@else {
+                <i class="material-icons red">block</i>    
+              }</td>
+          </ng-container>
+
+           <ng-container matColumnDef="level">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nível</th>
+            <td (click)="openDialog(row)" mat-cell *matCellDef="let row">{{ row.level }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Excluir">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Excluir</th>
+            <td class="t-center" (click)="openDialogDelet(row)" mat-cell *matCellDef="let row"><i class="material-icons red-10 m-hover">delete_forever</i></td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">
+                Nenhum dado que corresponda ao filtro "{{ input.value }}"
+            </td>
+          </tr>
+        </table>
+
+        <mat-paginator
+          [pageSizeOptions]="[8,15,30,50]"
+          aria-label="Selecione a página de usuários"
+        ></mat-paginator>
+      </div>
+        </div>
+      <!-- ngContent-->
+    </app-main>
+  </div>
+  
+</main>

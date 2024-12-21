@@ -1,0 +1,21 @@
+
+  <div id="chart" [ngStyle]="{'display:none': !exibirGrafico}">
+    <apx-chart
+      [series]="chartOptions.series!"
+      [chart]="chartOptions.chart!"
+      [dataLabels]="chartOptions.dataLabels!"
+      [plotOptions]="chartOptions.plotOptions!"
+      [xaxis]="chartOptions.xaxis!"
+      [stroke]="chartOptions.stroke!"
+      [fill]="chartOptions.fill!"
+      [yaxis]="chartOptions.yaxis!"
+      [title]="chartOptions.title!"
+      [tooltip]="chartOptions.tooltip!"
+      [legend]="chartOptions.legend!"
+    ></apx-chart>
+  <div class="char-title">
+    Distribuição Semanal de Análises Agendadas
+  </div>
+  </div>
+ 
+
