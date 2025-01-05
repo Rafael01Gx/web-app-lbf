@@ -49,13 +49,13 @@ return html;
           <div class="subpage">
             <div class="header">
               <div>
-                <img src="img/logo_relatorio.png" width="150px" />
+                <img src="./img/logo_relatorio.png" width="150px" />
               </div>
               <div>
                 <h1>Laudo de Análise</h1>
               </div>
               <div class="header-right">
-                <img height="24px" src="img/arcelor.png" />
+                <img height="24px" src="./img/arcelor.png" />
               </div>
             </div>
             <div class="body">

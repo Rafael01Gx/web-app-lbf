@@ -32,7 +32,7 @@ export class SidenavComponent implements OnInit {
       ico: 'description',
       name: 'Minhas OS',
       link: '/ordem-de-servico',
-      auth: ['Usuário','Operador','Administrador']
+      auth: ['Usuário','Administrador']
     },
     {
       ico: 'task',

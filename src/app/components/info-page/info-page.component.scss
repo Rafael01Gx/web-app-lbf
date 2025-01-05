@@ -97,4 +97,36 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .info-lab {
+      mat-card-header {
+        font-size: 18px; 
+        margin-bottom: 10px; 
+      }
+      mat-card-content {
+        height: auto !important;
+        table {
+          overflow-x: auto !important;
+          th,
+          td {
+            font-size: 12px;
+            padding: 8px 10px; 
+          }
+          th {
+            white-space: nowrap;
+          }
+          td {
+            white-space: normal; 
+            word-wrap: break-word; 
+          }
+        }
+
+        .note {
+          font-size: 12px; 
+          padding: 10px;
+        }
+      }
+    }
+  }
 }

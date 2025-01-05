@@ -29,4 +29,23 @@ margin-top: -25px;
       margin: 0;
     }
   }
+  .char-title{
+    text-align: center;
+    background-color: var(--gray-100);
+
+  }
+
+  @media (max-width: 768px){
+    .container-1 {
+      flex-direction: column !important;
+  
+      .col-2{
+        height: 50%;
+        width: 100%;
+      }
+      #chart {
+        margin: 0;
+      }
+    }
+  }
 }

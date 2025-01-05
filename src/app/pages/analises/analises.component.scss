@@ -44,4 +44,10 @@
   
     }
 }
+@media (max-width:768px) {
+    mat-card-header{
+        overflow-x: scroll;
+    }
+    mat-card-header::-webkit-scrollbar{ display: none;}
+}
 }

@@ -104,6 +104,8 @@ export class ListaDeAmostrasComponent {
       this.#dialog.open(DetalharResultadoAmostraComponent, {
         data: [item, resultado],
         minWidth: '21cm',
+        maxHeight: '95lvh',
+        maxWidth: '95lvw',
       });
     }
   }
@@ -114,6 +116,7 @@ export class ListaDeAmostrasComponent {
         data: amostra,
         minWidth: '25cm',
         maxHeight: '95lvh',
+        maxWidth: '95lvw',
       });
     }
   }

@@ -1,4 +1,3 @@
-import { NovaRemessaComponent } from './components/componentes-sgs/nova-remessa/nova-remessa.component';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -17,7 +16,7 @@ import { RelatorioDeAnaliseComponent } from './components/relatorio-de-analise/r
 import { AmostrasComponent } from './pages/amostras/amostras.component';
 import { OsAnalyticsResolver } from './core/services/analytical-charts/OsAnalytics.resolver';
 import { PainelAnalisesPreditivasComponent } from './pages/painel-analises-preditivas/painel-analises-preditivas.component';
-import { SgsComponent } from './pages/sgs/sgs.component';
+
 
 
 export const routes: Routes = [

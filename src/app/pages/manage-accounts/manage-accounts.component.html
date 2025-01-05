@@ -6,9 +6,9 @@
   <div class="main-container">
     <app-main>
       <!-- ngContent-->
-        <div class="tabela">
+        <div class="tabela-container">
             
-      <mat-form-field>
+      <mat-form-field class="filter-field"> 
         <mat-label>Filtro</mat-label>
         <input
           matInput
@@ -18,8 +18,8 @@
         />
       </mat-form-field>
 
-      <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort>
+      <div class="mat-elevation-z8 table-wrapper">
+        <table mat-table [dataSource]="dataSource" matSort class="t-table">
  
           <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
@@ -64,12 +64,13 @@
 
           <tr class="mat-row" *matNoDataRow>
             <td class="mat-cell" colspan="4">
-                Nenhum dado que corresponda ao filtro "{{ input.value }}"
+              {{ input.value }}"
             </td>
           </tr>
         </table>
 
         <mat-paginator
+        class="sticky-paginator"
           [pageSizeOptions]="[8,15,30,50]"
           aria-label="Selecione a página de usuários"
         ></mat-paginator>

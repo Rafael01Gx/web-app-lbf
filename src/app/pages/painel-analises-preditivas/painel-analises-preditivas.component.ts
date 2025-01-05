@@ -33,6 +33,10 @@ public pass:boolean = false;
      width:((chart.clientWidth/2) * 0.95),
      height :((chart.clientHeight/2) * 0.87)
    }
+   if(chart.clientWidth <= 678){
+    return {width:((chart.clientWidth) * 0.95),height :((chart.clientHeight/2))}
+   }
+
     return chart? tamanho : {width:0, height:0};
   }
 

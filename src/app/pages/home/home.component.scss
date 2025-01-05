@@ -34,4 +34,11 @@
       }
     }
   }
+
+  @media (max-width: 768px){
+    mat-card {
+      max-height: 100%;
+      overflow: auto;
+    }
+  }
 }

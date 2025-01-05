@@ -1,31 +1,53 @@
 :host {
-  .tabela {
-    width: 100%;
+  .tabela-container {
+    padding: 15px;
     display: flex;
     flex-direction: column;
-
-    table {
+    flex-grow: 1;
+    overflow: hidden;
+  
+    .filter-field {
+      width: 100%;
+  
+      .mat-mdc-form-field-infix {
         width: 100%;
       }
-      
-      .mat-mdc-form-field {
-        font-size: 14px;
-        width: 100%;
-        
+    }
+  
+    .table-wrapper {
+      flex-grow: 1;
+      overflow-y: auto;
+      position: relative;
+    }
+  
+    .t-table {
+      width: 100%;
+  
+      th {
+  
+        position: sticky;
+        top: 0;
+        z-index: 1;
       }
-      
-      td, th {
-        width: 25%;      
-      }
-
-      td:hover{
-        cursor: pointer;
-      }
-      th  {
-       background: var(--gray-100);
-      }
-      .t-center{
-        text-align: center;
-       
+  
+      td{
+        &:hover{
+            cursor: pointer;
+           
+        }
+    }
+    tr:hover>td{
+        background: var(--gray-100);
+    }
+    }
+  
+    .sticky-paginator {
+      position: sticky;
+      bottom: 0;
+      z-index: 2;
+    }
   }
-}}
+}
+
+
+
