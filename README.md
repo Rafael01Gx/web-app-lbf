@@ -7,56 +7,56 @@ Sistema web para gerenciamento de ordens de serviço e fluxo de amostras em um l
 #### 🔐 Login  
 Tela de autenticação da aplicação, com proteção por token JWT e controle de permissões baseado em perfis de usuário.
 
-![Login](img/desc/Login.jpg)
+![Login](https://raw.githubusercontent.com/rafael01gx/web-app-lbf/main/public/img/desc/Login.jpg)
 
 ---
 
 #### 🏠 Página Inicial  
 Tela inicial com instruções para envio de amostras e visualização de etapas do procedimento laboratorial.
 
-![Home](img/desc/Home.jpg)
+![Home](https://raw.githubusercontent.com/rafael01gx/web-app-lbf/main/public/img/desc/Home.jpg)
 
 ---
 
 #### 📊 Dashboard  
 Painel com gráficos e indicadores sobre o andamento das análises, ordens de serviço e prazos.
 
-![Dashboard](img/desc/DashBoard.jpg)
+![Dashboard](https://raw.githubusercontent.com/rafael01gx/web-app-lbf/main/public/img/desc/DashBoard.jpg)
 
 ---
 
 #### 📦 Ordem de Serviço  
 Tela para criação e visualização das ordens de serviço (remessas), com emissão de etiquetas e controle por status.
 
-![Ordem de Serviço](img/desc/Ordems%20de%20Serviço.jpg)
+![Ordem de Serviço](https://raw.githubusercontent.com/rafael01gx/web-app-lbf/main/public/img/desc/Ordems%20de%20Serviço.jpg)
 
 ---
 
 #### 🧾 Gerenciar OS (Administrador)  
 Acesso exclusivo do administrador para controlar o ciclo completo das ordens, incluindo aprovação e emissão de laudos finais.
 
-![Gerenciar OS](img/desc/GerenciarOs.jpg)
+![Gerenciar OS](https://raw.githubusercontent.com/rafael01gx/web-app-lbf/main/public/img/desc/GerenciarOs.jpg)
 
 ---
 
 #### ⚙️ Configurações  
 Gestão de parâmetros laboratoriais: unidades de medida, matérias-primas, peneiras e mais. Acesso restrito a operadores e administradores.
 
-![Configurações](img/desc/Configurações.jpg)
+![Configurações](https://raw.githubusercontent.com/rafael01gx/web-app-lbf/main/public/img/desc/Configurações.jpg)
 
 ---
 
 #### 🧪 Análises  
 Gestão do fluxo das análises laboratoriais, com lançamento de resultados e acompanhamento por status (aguardando, em andamento, finalizadas).
 
-![Análises](img/desc/Análises.jpg)
+![Análises](https://raw.githubusercontent.com/rafael01gx/web-app-lbf/main/public/img/desc/Análises.jpg)
 
 ---
 
 #### 👥 Gerenciamento de Contas  
 Interface administrativa para autorização, alteração de perfil e exclusão de usuários da plataforma.
 
-![Contas](img/desc/Contas.jpg)
+![Contas](https://raw.githubusercontent.com/rafael01gx/web-app-lbf/main/public/img/desc/Contas.jpg)
 
 ---
 
